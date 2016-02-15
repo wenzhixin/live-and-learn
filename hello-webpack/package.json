@@ -1,0 +1,16 @@
+{
+  "name": "hello-webpack",
+  "version": "1.0.0",
+  "description": "http://blog.tighten.co/unpacking-webpack",
+  "main": "index.js",
+  "scripts": {
+    "build": "webpack"
+  },
+  "author": "wenzhixin <wenzhixin2010@gmail.com>",
+  "license": "ISC",
+  "devDependencies": {
+    "css-loader": "^0.23.1",
+    "style-loader": "^0.13.0",
+    "webpack": "^1.12.13"
+  }
+}
