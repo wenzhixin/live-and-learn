@@ -1,0 +1,23 @@
+{
+  "name": "live-and-learn",
+  "version": "1.0.2",
+  "description": "活到老学到老",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wenzhixin/live-and-learn.git"
+  },
+  "author": "wenzhixin <wenzhixin2010@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/wenzhixin/live-and-learn/issues"
+  },
+  "homepage": "https://github.com/wenzhixin/live-and-learn#readme",
+  "devDependencies": {
+    "grunt": "~0.4.5",
+    "grunt-release": "^0.13.0"
+  }
+}
