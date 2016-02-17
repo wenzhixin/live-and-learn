@@ -1,0 +1,25 @@
+# Dependencies
+markdown: redcarpet
+redcarpet:
+  extensions:
+  - fenced_code_blocks
+  - tables
+  - autolink
+highlighter: rouge
+
+# Permalinks
+permalink: pretty
+
+# Server
+source:           docs
+destination:      _gh_pages
+host:             0.0.0.0
+port:             4000
+encoding:         UTF-8
+
+# Languages
+languages: ["en", "zh-cn"]
+languages_string: ["English"]
+
+# Custom vars
+current_version: 1.0.2

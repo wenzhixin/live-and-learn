@@ -18,7 +18,6 @@
   "homepage": "https://github.com/wenzhixin/live-and-learn#readme",
   "devDependencies": {
     "grunt": "~0.4.5",
-    "grunt-release": "^0.13.0",
-    "js-yaml": "^3.5.3"
+    "grunt-release": "^0.13.0"
   }
 }
