@@ -37,10 +37,10 @@ where status = 1 and not lastname regexp '^[0-9A-Za-z]';
 
 ### 2. 如何根据姓自动获取拼音首字母
 
-在这里，我们创建了一个 `fristPinyin` 的函数：
+在这里，我们创建了一个 `firstPinyin` 的函数：
 ```sql
 delimiter $$
-create function `fristPinyin`(p_name varchar(255)) returns varchar(255) charset utf8
+create function `firstPinyin`(p_name varchar(255)) returns varchar(255) charset utf8
 begin
     declare v_return varchar(255);
     set v_return = elt(interval(conv(hex(left(convert(p_name using gbk), 1)), 16, 10),
@@ -58,7 +58,7 @@ end $$
 使用我们自定义的函数：
 ```sql
 select
-    firstname, fristPinyin(lastname)
+    firstname, firstPinyin(lastname)
 from users
 where status = 1 and not lastname regexp '^[0-9A-Za-z]';
 ```
@@ -69,7 +69,7 @@ where status = 1 and not lastname regexp '^[0-9A-Za-z]';
 update
     users as u1,
     (select
-        id, concat(lastname,firstname) firstname, fristPinyin(lastname) lastname
+        id, concat(lastname,firstname) firstname, firstPinyin(lastname) lastname
     from users
     where status = 1 and not lastname regexp '^[0-9A-Za-z]') as u2
 set u1.firstname = u2.firstname, u1.lastname = u2.lastname
@@ -78,5 +78,5 @@ where u1.id = u2.id;
 
 修改完成后删掉自定义的函数即可：
 ```sql
-drop function `fristPinyin`;
+drop function `firstPinyin`;
 ```
