@@ -43,7 +43,7 @@ delimiter $$
 create function `fristPinyin`(p_name varchar(255)) returns varchar(255) charset utf8
 begin
     declare v_return varchar(255);
-    set v_return = elt(interval(conv(hex(left(convert(p_name using gbk),1)), 16, 10),
+    set v_return = elt(interval(conv(hex(left(convert(p_name using gbk), 1)), 16, 10),
         0xB0A1, 0xB0C5, 0xB2C1, 0xB4EE, 0xB6EA, 0xB7A2, 0xB8C1, 0xB9FE, 0xBBF7,
         0xBFA6, 0xC0AC, 0xC2E8, 0xC4C3, 0xC5B6, 0xC5BE, 0xC6DA, 0xC8BB,
         0xC8F6, 0xCBFA, 0xCDDA, 0xCEF4, 0xD1B9, 0xD4D1),
@@ -52,6 +52,8 @@ begin
     return v_return;
 end $$
 ```
+
+注：生僻字会出错显示为 Z，因为排到常用字之后了。
 
 使用我们自定义的函数：
 ```sql
